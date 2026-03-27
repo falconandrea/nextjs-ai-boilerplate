@@ -79,8 +79,6 @@ Once Next.js is ready, tell your agent to initialize the project context:
 ├── setup.sh                  # One-click setup (Next.js init + AI skills)
 │
 └── .ai/
-```
-
     ├── context/              # Project-specific docs (filled during /setup)
     │   ├── TECH_STACK.md
     │   ├── PRD.md

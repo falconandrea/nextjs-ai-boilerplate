@@ -23,59 +23,44 @@ cd my-new-project
 rm -rf .git && git init
 ```
 
-### 2. Install skills
+### 2. Run Setup
+
+This script handles both **new projects** (initializes Next.js) and **existing projects** (integrates AI agents).
 
 ```bash
-bash setup-skills.sh
+bash setup.sh
 ```
 
 Or with arguments:
 
 ```bash
-bash setup-skills.sh --agent all
-bash setup-skills.sh --agent opencode
-bash setup-skills.sh --agent antigravity
+bash setup.sh --agent all        # Antigravity + OpenCode
+bash setup.sh --agent opencode   # OpenCode / Claude Code only
+bash setup.sh --agent antigravity # Antigravity only
 ```
 
-The script will install the following skills:
+The script will:
+1.  **Initialize Next.js** if `package.json` is missing (using App Router, TS, Tailwind 4).
+2.  **Install AI Skills** from the ecosystem (debugging, TDD, Next.js best practices).
+3.  **Configure `.ai/` context** for your agents.
 
-#### General
+#### Installed Skills
 
-| Skill | What it covers |
+| Category | Skills |
 |---|---|
-| systematic-debugging | Structured debug before fixing |
-| test-driven-development | TDD workflow |
-| webapp-testing | Playwright, seeds, auth |
-| verification-before-completion | Self-check before marking done |
-
-#### Next.js
-
-| Skill | What it covers |
-|---|---|
-| vercel-react-best-practices | Server Components, no-useEffect, performance |
-| next-best-practices | App Router, Server Actions, caching |
-| vercel-composition-patterns | Component design patterns |
-| web-design-guidelines | Typography, spacing, accessibility |
-| ui-ux-pro-max | UX patterns, animations |
-| tailwind-design-system | Tailwind tokens and scale |
-| shadcn | shadcn/ui usage |
-| better-auth-best-practices | Auth and session handling |
-
-To keep skills up to date:
-
-```bash
-npx skills check    # see what has updates
-npx skills update   # update everything
-```
+| **General** | systematic-debugging, test-driven-development, webapp-testing, verification-before-completion |
+| **Next.js & React** | vercel-react-best-practices, next-best-practices, vercel-composition-patterns |
+| **UI/UX** | ui-ux-pro-max, tailwind-design-system, shadcn |
+| **Backend** | better-auth-best-practices, supabase-postgres-best-practices |
 
 ### 3. Run project setup
+
+Once Next.js is ready, tell your agent to initialize the project context:
 
 **Antigravity / OpenCode:**
 ```
 /setup
 ```
-
-**Other agents:** paste `.ai/prompts/project_setup.md` in chat and answer the questions.
 
 ### 4. Start building
 
@@ -90,10 +75,12 @@ npx skills update   # update everything
 
 ```
 .
-├── AGENTS.md                 # Always-on rules (no useEffect, TS strict, naming...)
-├── setup-skills.sh           # Skill installer + TECH_STACK setup — run once per project
+├── AGENTS.md                 # Rules for AI agents (TS strict, no useEffect...)
+├── setup.sh                  # One-click setup (Next.js init + AI skills)
 │
 └── .ai/
+```
+
     ├── context/              # Project-specific docs (filled during /setup)
     │   ├── TECH_STACK.md
     │   ├── PRD.md

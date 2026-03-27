@@ -13,6 +13,18 @@ Two problems kill AI-assisted development:
 
 This template solves both. The `.ai/` folder handles project memory (state specific to *this* project). The skills ecosystem handles procedural knowledge (best practices for React, Next.js, security, testing — maintained by the community).
 
+## Supported Stacks
+**Next.js 15+** — React 19, TypeScript strict, App Router, Tailwind v4 + shadcn/ui
+
+## Prerequisites
+Ensure you have the following installed on your machine:
+
+- **Node.js 20.11.0+** (LTS)
+- **npm / pnpm / bun**
+- **Git**
+
+---
+
 ## Quick Start
 
 ### 1. Choose your path
@@ -68,17 +80,21 @@ The script will:
 | **UI/UX** | ui-ux-pro-max, tailwind-design-system, shadcn |
 | **Backend** | better-auth-best-practices, supabase-postgres-best-practices |
 
-### 3. Run project setup
-
-Once Next.js is ready, tell your agent to initialize the project context:
+### 3. AI Context Discovery
+Initialize the AI agent's understanding of your specific project requirements:
 
 **Antigravity / OpenCode:**
 ```
 /setup
 ```
 
-### 4. Start building
+**Other agents:**
+Paste the contents of `.ai/prompts/project_setup.md` into your chat.
 
+> [!TIP]
+> This step is where the AI asks you about your product vision, features, and architecture to populate `.ai/context/`.
+
+### 4. Start Building
 ```
 /start            → restores full session context
 /feature [desc]   → plan mode: PRD + task list
@@ -152,10 +168,6 @@ Once Next.js is ready, tell your agent to initialize the project context:
 | `/start` | `workflows/start.md` | Reads memory, summarises state |
 | `/setup` | `workflows/setup.md` | Full discovery → generates context docs |
 | `/feature` | `workflows/feature.md` | Plan mode → PRD → task list |
-
-## Supported Stacks
-
-**Next.js 15+** — React 19, TypeScript strict, App Router, Tailwind v4 + shadcn/ui
 
 ---
 

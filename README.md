@@ -1,4 +1,4 @@
-# 🤖 AI Agent Development Template
+# 🚀 NextJS AI Agent Boilerplate
 
 A production-ready template for building Next.js 15+ projects with AI agents. Combines **persistent project memory** with the **skills ecosystem** (skills.sh) to give agents both procedural knowledge and project-specific context — without context drift across sessions.
 
@@ -15,13 +15,28 @@ This template solves both. The `.ai/` folder handles project memory (state speci
 
 ## Quick Start
 
-### 1. Clone and initialize
+### 1. Choose your path
+
+#### A. New Project (Starting from scratch)
+Clone this repo and run setup. It will initialize a fresh Next.js app for you.
 
 ```bash
-git clone <this-repo> my-new-project
-cd my-new-project
-rm -rf .git && git init
+git clone https://github.com/falconandrea/nextjs-ai-boilerplate.git my-app
+cd my-app
+bash setup.sh
 ```
+
+#### B. Existing Project (Inject AI agent part)
+If you already have a Next.js project, run this from your project root:
+
+```bash
+git clone https://github.com/falconandrea/nextjs-ai-boilerplate.git temp-ai
+cp -r temp-ai/.ai temp-ai/AGENTS.md temp-ai/setup.sh .
+rm -rf temp-ai
+bash setup.sh
+```
+
+---
 
 ### 2. Run Setup
 
@@ -95,17 +110,13 @@ Once Next.js is ready, tell your agent to initialize the project context:
     │       ├── prd-*.md
     │       └── tasks-*.md
     │
-    ├── prompts/              # For agents without slash commands
-    │   ├── project_setup.md
-    │   ├── create_prd.md
-    │   ├── generate_tasks.md
-    │   ├── refactoring.md
-    │   └── deployment.md
+    ├── prompts/              # System-level guidance
+    │   └── project_setup.md
     │
     └── workflows/
-        ├── start.md          # /start
-        ├── setup.md          # /setup
-        └── feature.md        # /feature
+        ├── start.md          # /start (Restore context)
+        ├── setup.md          # /setup (Initial discovery)
+        └── feature.md        # /feature (Plan & Implement)
 ```
 
 ---
@@ -124,6 +135,7 @@ Once Next.js is ready, tell your agent to initialize the project context:
 1. Agent reads `AGENTS.md` (always-on rules)
 2. `/start` → reads `memory/progress.md`, `memory/lessons.md`, `memory/blockers.md`
 3. Agent picks up exactly where you left off
+
 
 ### Feature flow
 

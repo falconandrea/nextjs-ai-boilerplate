@@ -4,19 +4,13 @@ description: Session start protocol - read project memory and context, then summ
 
 ## Steps
 
-1. Read the project's main directives file at `AGENTS.md` using the `view_file` tool. Keep all directives in mind for the entire session.
+1. Read the project's main directives file at `AGENTS.md` and `.ai/context/TECH_STACK.md` using the `view_file` tool. Keep all directives and versions in mind.
 
-2. Read `.ai/memory/progress.md` to understand the current project state and what has been completed so far.
+2. Read `.ai/memory/progress.md`, `.ai/memory/lessons.md`, and `.ai/memory/blockers.md` to understand the current state and avoid past mistakes.
 
-3. Read `.ai/memory/lessons.md` to recall past mistakes and patterns to avoid.
+3. After reading these files, present the user with a concise summary **in Italian** covering:
+   - **Stato Progetto**: progressi attuali e ultima fase completata.
+   - **Blockers**: eventuali problemi aperti.
+   - **Lessons**: breve richiamo alle lezioni più recenti da non dimenticare.
 
-4. Read `.ai/memory/blockers.md` to check for any open issues or known blockers.
-
-5. Read `.ai/context/TECH_STACK.md` to have a clear picture of the technology stack and versions in use.
-
-6. After reading all the files above, present the user with a concise summary **in Italian** covering:
-   - The current project status (from `progress.md`)
-   - Any open blockers (from `blockers.md`)
-   - The key operational directives you will follow (from `AGENTS.md`)
-
-7. Ask the user: **"Ready! What are we working on today?"**
+4. Ask the user: **"Pronto a continuare! Su cosa lavoriamo oggi?"**

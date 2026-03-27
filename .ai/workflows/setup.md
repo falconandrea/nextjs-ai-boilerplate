@@ -4,17 +4,16 @@ description: New project setup protocol - interrogate requirements and generate 
 
 ## Steps
 
-1. Read `AGENTS.md` to internalize global rules. Activate **PLANNING MODE**. No code will be written during this phase.
+1. Read `AGENTS.md` and `.ai/context/TECH_STACK.md`. Activate **PLANNING MODE**. 
 
-2. Verify that `setup-skills.sh` has already been run (check that `.ai/context/TECH_STACK.md` contains the correct stack template, not just the placeholder). If not, instruct the developer to run `bash setup-skills.sh` first.
+2. **Interrogate**: Follow the interrogation framework in `.ai/prompts/project_setup.md` to run discovery with the user. Ask questions phase by phase.
 
-3. Follow the full interrogation framework in `.ai/prompts/project_setup.md` to run discovery with the developer.
-   Ask questions phase by phase and wait for answers.
+3. **Context Generation**: Once approved, generate/update:
+   - `.ai/context/TECH_STACK.md` (project-specific versions)
+   - `.ai/context/PRD.md` (high-level product definition)
+   - `.ai/context/APP_FLOW.md` (user journeys/architecture)
 
-4. Once the interrogation is complete and approved, generate the context files in `.ai/context/`:
-   - `TECH_STACK.md` (update with project-specific details)
-   - `PRD.md`
-   - `APP_FLOW.md`
-   - Update `.ai/memory/progress.md` with the initial status.
+4. **Initialize Memory**: Update `.ai/memory/progress.md` with the initial status.
 
-5. Confirm setup is complete.
+5. **Ready**: Confirm setup is complete. Suggest running `/feature` to start the first task.
+

@@ -4,17 +4,17 @@ description: New feature workflow - create a PRD, get approval, generate tasks
 
 ## Steps
 
-1. Activate **PLANNING MODE**. No code will be written during this phase.
+1. Activate **PLANNING MODE**. Use `.ai/context/TECH_STACK.md` as the source of truth for versions.
 
-2. Read existing `.ai/context/` files (like `TECH_STACK.md`, `PRD.md`) to understand constraints.
+2. **Interrogate**: Ask the user to describe the feature. Ask clarifying questions until the scope is defined.
 
-3. Ask the user to describe the feature. Ask clarifying questions as needed to gather full requirements.
+3. **PRD**: Write the PRD in `.ai/features/[feature-name]/prd-[feature-name].md` using the template at `.ai/features/_TEMPLATE.md`. Get user approval.
 
-4. Write the PRD following the template in `.ai/features/_TEMPLATE.md` and save it to `.ai/features/[feature-name]/prd-[feature-name].md`.
+4. **Tasks**: Generate a detailed task list in `.ai/features/[feature-name]/tasks-[feature-name].md`. Break it into atomic, testable steps.
 
-5. Present the PRD to the user and ask for approval.
+5. **ACTING MODE**: Once approved, start implementation. Update `.ai/memory/progress.md` as tasks are completed.
 
-6. Once the PRD is approved, generate the task list and save it to `.ai/features/[feature-name]/tasks-[feature-name].md`.
-   Update `.ai/memory/progress.md` with the new feature.
+6. **Review**: After implementation, enter **REVIEW MODE** to check for potential bugs or violations of `AGENTS.md`.
 
-7. Exit plan mode and ask the user if you should start the implementation (ACTING MODE).
+7. **Lessons**: If a bug was fixed or a new pattern discovered, update `.ai/memory/lessons.md`.
+

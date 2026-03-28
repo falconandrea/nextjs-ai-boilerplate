@@ -109,6 +109,12 @@ Paste the contents of `.ai/prompts/project_setup.md` into your chat.
 ├── AGENTS.md                 # Rules for AI agents (TS strict, no useEffect...)
 ├── setup.sh                  # One-click setup (Next.js init + AI skills)
 │
+├── .agents/                  # Agent automated execution context
+│   └── workflows/
+│       ├── start.md          # /start (Restore context)
+│       ├── setup.md          # /setup (Initial discovery)
+│       └── feature.md        # /feature (Plan & Implement)
+│
 └── .ai/
     ├── context/              # Project-specific docs (filled during /setup)
     │   ├── TECH_STACK.md
@@ -126,13 +132,8 @@ Paste the contents of `.ai/prompts/project_setup.md` into your chat.
     │       ├── prd-*.md
     │       └── tasks-*.md
     │
-    ├── prompts/              # System-level guidance
-    │   └── project_setup.md
-    │
-    └── workflows/
-        ├── start.md          # /start (Restore context)
-        ├── setup.md          # /setup (Initial discovery)
-        └── feature.md        # /feature (Plan & Implement)
+    └── prompts/              # System-level guidance
+        └── project_setup.md
 ```
 
 ---
@@ -165,9 +166,9 @@ Paste the contents of `.ai/prompts/project_setup.md` into your chat.
 
 | Command | File | What it does |
 |---|---|---|
-| `/start` | `workflows/start.md` | Reads memory, summarises state |
-| `/setup` | `workflows/setup.md` | Full discovery → generates context docs |
-| `/feature` | `workflows/feature.md` | Plan mode → PRD → task list |
+| `/start` | `.agents/workflows/start.md` | Reads memory, summarises state |
+| `/setup` | `.agents/workflows/setup.md` | Full discovery → generates context docs |
+| `/feature` | `.agents/workflows/feature.md` | Plan mode → PRD → task list |
 
 ---
 

@@ -44,6 +44,7 @@ To update: `npx skills update`
 
 **Actions**:
 - Write code following `.ai/context/TECH_STACK.md` versions STRICTLY
+- Apply the `frontend-design` skill guidelines when creating or modifying UI components
 - Update `.ai/memory/progress.md` after each completed task
 - Mark tasks `[x]` in feature task files
 
@@ -51,6 +52,7 @@ To update: `npx skills update`
 **Trigger**: After implementation, or when user says "review"
 
 **Actions**:
+- Run the `react-doctor` skill to perform health checks and catch React issues early
 - Check for violations of `.ai/memory/lessons.md`
 - Verify against `.ai/context/PRD.md` acceptance criteria
 - Propose improvements

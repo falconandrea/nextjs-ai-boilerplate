@@ -95,12 +95,13 @@ install_skill() {
 section "Installing AI Skills"
 install_skill "obra/superpowers" \
   "--skill systematic-debugging test-driven-development verification-before-completion"
-install_skill "anthropics/skills" "--skill webapp-testing"
+install_skill "anthropics/skills" "--skill webapp-testing frontend-design"
 
 section "Next.js / React Specialized Skills"
 install_skill "vercel-labs/agent-skills" \
   "--skill vercel-react-best-practices web-design-guidelines vercel-composition-patterns"
 install_skill "vercel-labs/next-skills" "--skill next-best-practices"
+install_skill "millionco/react-doctor" "--skill react-doctor"
 install_skill "nextlevelbuilder/ui-ux-pro-max-skill" "--skill ui-ux-pro-max"
 install_skill "wshobson/agents" "--skill tailwind-design-system"
 install_skill "shadcn/ui" "--skill shadcn"

@@ -54,3 +54,9 @@ yarn-error.log*
 .turbo/
 .vercel/
 .netlify/
+
+# ========================================
+# AI Agents local brains/skills symlinks
+# ========================================
+.agents
+.opencode
